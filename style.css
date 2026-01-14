@@ -18,88 +18,69 @@ body {
     min-height: 100vh;
 }
 
-.hero {
+/* Site Header */
+.site-header {
     width: 100%;
-    max-width: 1200px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: row-reverse;
-    /* Text on right, Image on left (visually) or adjusted by positioning */
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    animation: fadeIn 2s ease-out forwards;
-    opacity: 0;
-    /* Start hidden */
-}
-
-.hero-text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: 2rem;
-    letter-spacing: 0.5rem;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    /* In vertical mode, this stacks lines horizontally right-to-left if desired, but here we likely want "Welcome" then "Sajo" */
-    gap: 1.5rem;
-    height: fit-content;
+    align-items: center;
+    padding-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.hero-text p {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    /* Adjust spacing between lines */
+.header-branding {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
+.site-title {
+    font-size: 2.5rem;
+    font-family: 'Yuji Syuku', serif;
     font-weight: normal;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
-.hero-image img {
-    width: 300px;
-    height: auto;
-    /* filter: drop-shadow(0 0 10px rgba(0,0,0,0.1)); */
-    /* Image is already monochrome logo style */
-    opacity: 0.9;
-    mix-blend-mode: multiply;
-    /* Makes white background transparent */
+.site-subtitle {
+    font-size: 1rem;
+    color: #777;
+    letter-spacing: 0.1rem;
+}
+
+/* Navigation */
+.site-nav {
+    width: 100%;
+    background-color: #fce4ec;
+    /* Light pinkish to match reference feel */
+    padding: 1rem 0;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.site-nav a:hover {
+    color: #000;
 }
 
 @media (max-width: 768px) {
-    .hero-content {
+    .site-nav ul {
         flex-direction: column;
-        gap: 2rem;
-    }
-
-    .hero-text {
-        writing-mode: horizontal-tb;
-        text-align: center;
-    }
-
-    .hero-text p,
-    .hero-text h1 {
-        margin: 0;
-        writing-mode: horizontal-tb;
+        align-items: center;
+        gap: 1rem;
     }
 }
 
