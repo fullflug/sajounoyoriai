@@ -207,13 +207,14 @@ body {
     width: auto;
     opacity: 1;
     mix-blend-mode: multiply;
+    /* Make white background transparent */
 }
 
 .intro-text-group {
     display: flex;
     flex-direction: row-reverse;
-    gap: 1.5rem;
-    height: 300px;
+    gap: 2rem;
+    height: 60vh;
     align-items: center;
 }
 
@@ -230,17 +231,15 @@ body {
 
 .intro-subtitle {
     writing-mode: vertical-rl;
-    text-orientation: upright;
-    /* Stacked English letters */
+    text-orientation: sideways;
     font-family: 'Shippori Mincho', serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #333;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     margin: 0;
-    /* Remove align-items: end to center it or align as needed. Text orientation upright makes it centered in the line usually. */
 }
 
 @keyframes textFadeIn {
