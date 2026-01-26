@@ -55,4 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('ended', () => {
         playBtn.textContent = '▶';
     });
+    // Auto-play on first scroll
+    const handleScrollPlay = () => {
+        if (audio.paused) {
+            audio.play().then(() => {
+                playBtn.textContent = '⏸';
+                console.log('Auto-playing music on scroll');
+            }).catch(e => {
+                console.log('Auto-play failed:', e);
+            });
+        }
+        window.removeEventListener('scroll', handleScrollPlay);
+        window.removeEventListener('click', handleScrollPlay); // Also try on click just in case
+    };
+
+    window.addEventListener('scroll', handleScrollPlay);
+    window.addEventListener('click', handleScrollPlay);
 });
