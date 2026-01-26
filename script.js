@@ -56,19 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
         playBtn.textContent = '▶';
     });
     // Auto-play on first scroll
-    const handleScrollPlay = () => {
+    // Auto-play on first interaction (scroll, click, touch, key)
+    const handleInteractionPlay = () => {
         if (audio.paused) {
             audio.play().then(() => {
                 playBtn.textContent = '⏸';
-                console.log('Auto-playing music on scroll');
+                console.log('Auto-playing music on interaction');
+                // Only remove listeners if play succeeded
+                window.removeEventListener('scroll', handleInteractionPlay);
+                window.removeEventListener('click', handleInteractionPlay);
+                window.removeEventListener('touchstart', handleInteractionPlay);
+                window.removeEventListener('keydown', handleInteractionPlay);
             }).catch(e => {
-                console.log('Auto-play failed:', e);
+                console.log('Auto-play failed (likely blocked), waiting for next interaction:', e);
+                // Do NOT remove listeners here, try again next time
             });
         }
-        window.removeEventListener('scroll', handleScrollPlay);
-        window.removeEventListener('click', handleScrollPlay); // Also try on click just in case
     };
 
-    window.addEventListener('scroll', handleScrollPlay);
-    window.addEventListener('click', handleScrollPlay);
+    window.addEventListener('scroll', handleInteractionPlay);
+    window.addEventListener('click', handleInteractionPlay);
+    window.addEventListener('touchstart', handleInteractionPlay);
+    window.addEventListener('keydown', handleInteractionPlay);
 });
