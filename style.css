@@ -114,6 +114,29 @@ body {
     transform: scale(1.1);
 }
 
+/* About Section */
+.about-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    /* or match bg-color */
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #444;
+    white-space: pre-line;
+    /* Handle line breaks from user input */
+    font-family: 'Shippori Mincho', serif;
+}
+
 /* News Section */
 .news-section {
     padding: 4rem 2rem;
