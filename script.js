@@ -1,15 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     const intro = document.querySelector('.intro-overlay');
 
-    // Fade out after 1.5 seconds
+    // Intro Fade out logic
     setTimeout(() => {
         intro.classList.add('fade-out');
-
-        // Remove from DOM after fade transition is complete
         setTimeout(() => {
             intro.style.display = 'none';
         }, 1000);
     }, 1500);
+
+    // BGM Auto-play logic
+    const bgm = document.getElementById("bgm");
+    if (bgm) {
+        bgm.volume = 0.3;
+        bgm.play().catch(() => {
+            // Fallback for blocked auto-play
+            document.addEventListener("click", () => {
+                bgm.play();
+            }, { once: true });
+        });
+    }
 
     // Music player functionality
     const audio = document.getElementById('bgMusic');
