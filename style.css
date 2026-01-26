@@ -137,6 +137,44 @@ body {
     font-family: 'Shippori Mincho', serif;
 }
 
+/* Footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    border-bottom: 1px solid #555;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.contact-email {
+    font-family: monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 2rem;
+}
+
 /* News Section */
 .news-section {
     padding: 4rem 2rem;
