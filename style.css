@@ -82,9 +82,15 @@ body {
 
 @media (max-width: 768px) {
     .site-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .site-nav li {
+        width: calc(50% - 10px);
+        text-align: center;
     }
 }
 
@@ -143,8 +149,6 @@ body {
     font-size: 1.1rem;
     line-height: 2;
     color: #444;
-    white-space: pre-line;
-    /* Handle line breaks from user input */
     font-family: 'Shippori Mincho', serif;
 }
 
