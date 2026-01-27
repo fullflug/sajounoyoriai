@@ -9,17 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }, 1500);
 
-    // BGM Auto-play logic
-    const bgm = document.getElementById("bgm");
-    if (bgm) {
-        bgm.volume = 0.3;
-        bgm.play().catch(() => {
-            // Fallback for blocked auto-play
-            document.addEventListener("click", () => {
-                bgm.play();
-            }, { once: true });
-        });
-    }
+
 
     // Music player functionality
     const audio = document.getElementById('bgMusic');
