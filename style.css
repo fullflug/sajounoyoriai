@@ -196,13 +196,13 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .new-release-cover {
     width: 100%;
-    max-width: 80px;
-    /* Reduced to ~50% of previous 150px */
+    max-width: 250px;
+    /* Reverted to previous size */
     height: auto;
     border-radius: 4px;
     margin-bottom: 1rem;
@@ -226,14 +226,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 200px;
-    max-width: 250px;
+    flex: 1 1 250px;
+    max-width: 300px;
 }
 
 .past-work-cover {
     width: 100%;
-    max-width: 50px;
-    /* Further reduced */
+    max-width: 140px;
+    /* Reverted to previous size */
     height: auto;
     border-radius: 4px;
     margin-bottom: 0.8rem;
