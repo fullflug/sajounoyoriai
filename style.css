@@ -197,6 +197,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .new-release-cover {
