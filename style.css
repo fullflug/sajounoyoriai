@@ -184,6 +184,10 @@ body {
     letter-spacing: 0.05rem;
 }
 
+.contact-email+.contact-email {
+    margin-top: 2rem;
+}
+
 .copyright {
     font-size: 0.8rem;
     color: #aaa;
