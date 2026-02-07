@@ -31,9 +31,6 @@ body {
     align-items: center;
     padding-top: 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 900;
 }
 
 .header-branding {
@@ -61,6 +58,10 @@ body {
     background-color: #fce4ec;
     /* Light pinkish to match reference feel */
     padding: 1rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 900;
 }
 
 .site-nav ul {
