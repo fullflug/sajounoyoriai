@@ -85,16 +85,29 @@ body {
 }
 
 @media (max-width: 768px) {
+    .site-nav {
+        padding: 0.5rem 0;
+        /* Reduced padding */
+    }
+
     .site-nav ul {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 5px;
+        /* Tighter gap */
     }
 
     .site-nav li {
         width: calc(50% - 10px);
         text-align: center;
+        margin: 2px 0;
+    }
+
+    .site-nav a {
+        font-size: 0.85rem;
+        /* Smaller font */
+        letter-spacing: 0.05rem;
     }
 }
 
