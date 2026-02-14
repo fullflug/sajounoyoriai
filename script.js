@@ -53,4 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', handleInteractionPlay);
     window.addEventListener('touchstart', handleInteractionPlay);
     window.addEventListener('keydown', handleInteractionPlay);
+
+    // Ad Slider Logic
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    if (track && slides.length > 1) {
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    }
 });
