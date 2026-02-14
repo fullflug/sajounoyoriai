@@ -36,6 +36,8 @@ body {
 .header-branding {
     text-align: center;
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .site-title {
@@ -50,6 +52,22 @@ body {
     font-size: 1rem;
     color: #777;
     letter-spacing: 0.1rem;
+}
+
+.header-logo-bg {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    /* Adjust as needed */
+    transform: translateY(-50%);
+    height: 120px;
+    /* Adjust size relative to header */
+    width: auto;
+    opacity: 0.4;
+    /* Slightly transparent so it doesn't distract too much */
+    z-index: -1;
+    /* Place behind text */
+    pointer-events: none;
 }
 
 /* Navigation */
