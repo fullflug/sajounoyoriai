@@ -216,6 +216,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2.5rem;
+    /* Large padding to make the image look "further back" */
+    background-color: #fff;
+    /* White frame for the image */
 }
 
 .slide a {
@@ -224,12 +228,39 @@ body {
 }
 
 .slide img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-    max-height: 200px;
-    /* Adjust height as needed */
+    max-height: 120px;
+    /* Reduced height to prevent stretching small GIFs */
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fce4ec;
+    /* Matching the pinkish accent */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */

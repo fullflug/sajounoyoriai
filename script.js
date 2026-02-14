@@ -57,13 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ad Slider Logic
     const track = document.querySelector('.slider-track');
     const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
     if (track && slides.length > 1) {
         let currentIndex = 0;
         const totalSlides = slides.length;
 
+        const updateDots = (index) => {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        };
+
         const nextSlide = () => {
             currentIndex = (currentIndex + 1) % totalSlides;
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots(currentIndex);
         };
 
         // Change slide every 3 seconds
