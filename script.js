@@ -58,24 +58,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.slider-track');
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
 
     if (track && slides.length > 1) {
         let currentIndex = 0;
         const totalSlides = slides.length;
+        let slideInterval;
 
-        const updateDots = (index) => {
+        const updateSlider = (index) => {
+            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+                dot.classList.toggle('active', i === currentIndex);
             });
         };
 
         const nextSlide = () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots(currentIndex);
+            updateSlider((currentIndex + 1) % totalSlides);
         };
 
-        // Change slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        const prevSlide = () => {
+            updateSlider((currentIndex - 1 + totalSlides) % totalSlides);
+        };
+
+        const startAutoPlay = () => {
+            stopAutoPlay();
+            slideInterval = setInterval(nextSlide, 3000);
+        };
+
+        const stopAutoPlay = () => {
+            if (slideInterval) clearInterval(slideInterval);
+        };
+
+        // Event Listeners
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay(); // Reset timer
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay(); // Reset timer
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                updateSlider(i);
+                startAutoPlay(); // Reset timer
+            });
+        });
+
+        // Initialize
+        startAutoPlay();
     }
 });
