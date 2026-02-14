@@ -38,6 +38,8 @@ body {
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
+    display: inline-block;
+    /* Hug the text for precise positioning */
 }
 
 .site-title {
