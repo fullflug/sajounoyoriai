@@ -59,16 +59,16 @@ body {
 .header-logo-bg {
     position: absolute;
     top: 50%;
-    right: -20px;
-    /* Adjust as needed */
+    right: -40px;
+    /* Positioned to overlap "所" character */
     transform: translateY(-50%);
-    height: 120px;
-    /* Adjust size relative to header */
+    height: 180px;
+    /* Enlarged as requested */
     width: auto;
-    opacity: 0.4;
-    /* Slightly transparent so it doesn't distract too much */
+    opacity: 0.5;
+    /* Slightly more visible */
     z-index: -1;
-    /* Place behind text */
+    /* Behind text */
     pointer-events: none;
 }
 
